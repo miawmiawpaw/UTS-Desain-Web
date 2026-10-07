@@ -1,0 +1,117 @@
+* { box-sizing: border-box; }
+
+:root {
+  --black: #111;
+  --white: #fff;
+  --gray: #777;
+  --line: #ddd;
+  --lime: #d7ff3f;
+}
+
+body {
+  margin: 0;
+  color: var(--black);
+  background: var(--white);
+  font-family: Arial, sans-serif;
+}
+
+a { color: inherit; }
+
+.auth-shell {
+  display: grid;
+  min-height: 100vh;
+  grid-template-columns: 42% 58%;
+}
+
+.intro-panel {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  padding: 40px 10%;
+  color: var(--white);
+  background: linear-gradient(#0009, #0009), url('image/joey-zhou-5_0u5MXHvKc-unsplash.jpg') center / cover;
+}
+
+.brand { display: inline-block; }
+.brand img { width: 42px; height: 42px; object-fit: contain; }
+.brand--light img { filter: invert(1); }
+
+.intro-copy { margin: auto 0; }
+.intro-copy h1 {
+  margin: 0;
+  font-size: clamp(48px, 6vw, 76px);
+  letter-spacing: -.07em;
+  line-height: .95;
+}
+.intro-copy h1 span { color: var(--lime); }
+.intro-copy p { max-width: 260px; line-height: 1.6; }
+.intro-footer { color: #ddd; font-size: 11px; }
+
+.eyebrow {
+  color: var(--gray);
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+.intro-panel .eyebrow { color: var(--lime); }
+
+.form-panel {
+  display: grid;
+  min-height: 100vh;
+  padding: 48px 10%;
+  place-items: center;
+  background: #f6f6f4;
+}
+.form-wrap { width: min(100%, 430px); }
+.brand--dark { display: inline-block; margin-bottom: 65px; }
+.brand--dark img { border-radius: 8px; }
+.form-heading { margin-bottom: 35px; }
+.form-heading h2 { margin: 0; font-size: 45px; letter-spacing: -.06em; }
+.form-heading p:last-child { color: var(--gray); font-size: 14px; }
+
+.auth-form { display: grid; gap: 20px; }
+button, input { font: inherit; }
+button { cursor: pointer; }
+
+.google-button, .submit-button {
+  width: 100%;
+  min-height: 50px;
+  border: 1px solid var(--black);
+  border-radius: 3px;
+  font-weight: bold;
+}
+.google-button { background: var(--white); }
+.google-icon { margin-right: 8px; color: #4285f4; }
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #999;
+  font-size: 11px;
+}
+.divider::before, .divider::after { content: ''; height: 1px; flex: 1; background: var(--line); }
+
+.field { display: grid; gap: 8px; }
+.field label, .field-label-row label { font-size: 12px; font-weight: bold; }
+.field-label-row { display: flex; justify-content: space-between; }
+.field-label-row a, .signup-copy a, .terms-copy a { color: #4d5e00; font-weight: bold; text-decoration: none; }
+.field input { min-height: 50px; padding: 0 14px; border: 1px solid #ccc; border-radius: 3px; }
+.field input:focus { outline: 3px solid #d7ff3f99; }
+
+.remember { display: flex; gap: 8px; color: #666; font-size: 12px; }
+.remember input { accent-color: var(--black); }
+.submit-button { position: relative; display: flex; align-items: center; justify-content: center; padding: 0 18px; background: var(--lime); }
+.submit-label { position: static; }
+.submit-arrow { position: absolute; right: 18px; }
+
+button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid #8da600; outline-offset: 2px; }
+.signup-copy, .terms-copy { color: var(--gray); font-size: 12px; text-align: center; }
+.terms-copy { margin-top: 55px; font-size: 10px; }
+
+@media (max-width: 767px) {
+  .auth-shell { display: block; }
+  .intro-panel { display: none; }
+  .form-panel { min-height: 100vh; padding: 38px 24px; }
+}
